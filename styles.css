@@ -172,7 +172,6 @@ body {
   transform: translateY(0);
 }
 
-/* Networks */
 .networks {
   list-style: none;
   padding: 0;
@@ -196,92 +195,96 @@ body {
 }
 
 .team-card {
-  margin-top: 18px;
-  padding: 14px;
-  border-radius: 10px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+  padding: 20px;
+  margin-top: 24px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(6,30,60,0.14);
+  color: #eaf6ff;
 }
 
 .team-card h3 {
-  margin: 0 0 12px 0;
-  font-size: 16px;
+  margin: 0 0 16px 0;
+  font-size: 1.15rem;
+  color: #bfefff;
 }
 
-.members {
-  display: flex;
+/* grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 16px;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
+/* member card */
 .member {
-  width: 140px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  padding: 12px;
   text-align: center;
-  background: rgba(255,255,255,0.02);
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: transform .18s ease, box-shadow .18s ease;
+  min-height: 170px;
+}
+
+.member:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(3,10,28,0.45);
+}
+
+/* skin image */
+.skin {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.12);
-  flex: 1 1 140px;
-  max-width: 180px;
+  background: #bfe6ff;
+  box-shadow: 0 4px 12px rgba(3,10,28,0.25);
+  border: 4px solid rgba(255,255,255,0.02);
 }
 
-.member .skin {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto 8px auto;
-  border-radius: 8px;
-  background: #091826;
-  object-fit: contain;
-  image-rendering: pixelated;
+/* meta */
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.member .rank {
-  font-size: 13px;
-  color: rgb(255, 39, 39);
-  font-weight: 1000;
-  margin-bottom: 6px;
+.rank {
+  font-weight: 700;
+  color: #ff6b6b; /* rojo para Owner, ajusta si quieres colores por rol */
+  font-size: 0.9rem;
+  margin-bottom: 2px;
 }
 
-.member .name {
-  font-size: 14px;
-  color: rgb(246, 121, 121);
-  font-weight: 600;
-  word-break: break-word;
+.name {
+  font-size: 0.88rem;
+  color: #dff8ff;
+  opacity: 0.95;
 }
 
-/* Responsive general */
-@media (max-width: 720px) {
-  body {
-    padding: 8px;
-  }
-
-  .site-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .card {
-    flex-direction: column;
-  }
-
-  .right {
-    width: 100%;
-  }
-
-  .members {
-    justify-content: center;
-  }
-
-  .member {
-    max-width: 45%; /* 2 por fila */
-  }
-}
-
+/* small screens tweaks */
 @media (max-width: 480px) {
   .member {
-    max-width: 100%; /* 1 por fila */
+    min-height: 150px;
+    padding: 10px;
+  }
+  .skin {
+    width: 84px;
+    height: 84px;
+  }
+}
+
+/* medium screens */
+@media (min-width: 481px) and (max-width: 900px) {
+  .team-grid {
+    gap: 14px;
+  }
+  .member {
+    padding: 12px;
   }
 }
 
