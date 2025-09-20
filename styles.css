@@ -131,20 +131,21 @@ body {
 
 /* Actions */
 .actions {
-  margin-top: 14px;
+  margin-top: 15px;
   display: flex;
   gap: 10px;
+  justify-content: center;
   align-items: center;
   position: relative;
   flex-wrap: wrap;
 }
 
 .actions button {
-  background: transparent;
+  background: var(--glass);
   border: 1px solid rgba(255,255,255,0.08);
   padding: 8px 12px;
   border-radius: 8px;
-  color: var(--accent);
+  color: var(--accent-2);
   cursor: pointer;
   flex: 1;
   min-width: 120px;
@@ -200,7 +201,9 @@ body {
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(6,30,60,0.14);
-  color: #eaf6ff;
+  color: #0091ff;
+  display: grid;
+  gap: 20px;
 }
 
 .team-card h3 {
@@ -209,11 +212,10 @@ body {
   color: #bfefff;
 }
 
-/* grid */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 16px;
+.team-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 /* member card */
